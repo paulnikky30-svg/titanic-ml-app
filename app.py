@@ -3,7 +3,11 @@ import pickle
 import pandas as pd
 
 # Load trained model
-model = pickle.load(open("titanic_rf_model.pkl", "rb"))
+import os
+import pickle
+
+model_path = os.path.join(os.path.dirname(_file_), "titanic_rf_model.pkl")
+model = pickle.load(open(model_path, "rb"))
 
 st.title("🚢 Titanic Survival Prediction App")
 

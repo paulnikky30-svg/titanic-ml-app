@@ -3,15 +3,11 @@ import pickle
 import pandas as pd
 
 # Load trained model
+import os
 import pickle
-import streamlit as st
 
-@st.cache_resource
-def load_model():
-    with open("titanic_rf_model.pkl", "rb") as f:
-        return pickle.load(f)
-
-model = load_model()
+model_path = os.path.join(os.path.dirname(__file__), "titanic_rf_model.pkl")
+model = pickle.load(open(model_path, "rb"))
 
 st.title("🚢 Titanic Survival Prediction App")
 

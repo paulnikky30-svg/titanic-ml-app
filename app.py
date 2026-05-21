@@ -6,7 +6,7 @@ import pandas as pd
 import os
 import pickle
 
-model_path = os.path.join(os.path.dirname(_file_), "titanic_rf_model.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "titanic_rf_model.pkl")
 model = pickle.load(open(model_path, "rb"))
 
 st.title("🚢 Titanic Survival Prediction App")
